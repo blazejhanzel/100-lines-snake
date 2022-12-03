@@ -159,7 +159,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -176,7 +176,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -202,7 +202,157 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &9150127632590430021
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1487114077694220625, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487114077694220625, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionId
+      value: 798a0b8a-4159-428c-9318-f1f13442dd10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487114077694220625, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: 687507e1-f4e4-4042-8abf-db83dbe9e7be
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487114077694220625, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: 21dbf524-1642-46ce-af14-2f681c19b108
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487114077694220625, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionId
+      value: 62a1e90a-7a12-4942-b496-4c923f962fb2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487114077694220625, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
+      value: b81ba7bb-7d15-4725-b867-d081909e5fd3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487114077694220625, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionId
+      value: 959d2866-fcbd-4631-ae0e-3d27128ab894
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487114077694220625, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionId
+      value: 2deaf772-5bbc-40bd-872f-095ca2f781b2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487114077694220625, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionId
+      value: 8b80ff62-2f08-456f-be4b-b0c0b0017ab9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487114077694220625, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_ActionId
+      value: 5286a870-bfb6-492a-ace6-546305406aa1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487114077694220625, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[9].m_ActionId
+      value: 83f1ca94-bb6e-4ee5-a5de-e706ab63665b
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487114077694220625, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_ActionId
+      value: 2d869f8a-61aa-4b60-b414-07fd75ee8946
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487114077694220625, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionName
+      value: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487114077694220625, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487114077694220625, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: UI/Submit[/Keyboard/enter]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487114077694220625, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionName
+      value: UI/Cancel[/Keyboard/escape]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487114077694220625, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
+      value: UI/Point[/Mouse/position,/Pen/position]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487114077694220625, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionName
+      value: UI/Click[/Mouse/leftButton,/Pen/tip]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487114077694220625, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionName
+      value: UI/ScrollWheel[/Mouse/scroll]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487114077694220625, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionName
+      value: UI/MiddleClick[/Mouse/middleButton]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487114077694220625, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_ActionName
+      value: UI/RightClick[/Mouse/rightButton]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487114077694220625, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[9].m_ActionName
+      value: UI/TrackedDevicePosition
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487114077694220625, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_ActionName
+      value: UI/TrackedDeviceOrientation
+      objectReference: {fileID: 0}
+    - target: {fileID: 7622108425126186076, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_Name
+      value: Snake
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651751774984304837, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651751774984304837, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651751774984304837, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651751774984304837, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651751774984304837, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651751774984304837, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651751774984304837, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651751774984304837, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651751774984304837, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651751774984304837, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651751774984304837, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2db100565314e49859dc0f1a6c4154a4, type: 3}
