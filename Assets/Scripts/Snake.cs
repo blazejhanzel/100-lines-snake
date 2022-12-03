@@ -1,59 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Snake : MonoBehaviour
 {
-    // NOTE: scene is 40 u x 30 u
+    [SerializeField] private GameObject tailPrefab;
 
-    [SerializeField]
-    private GameObject tailPrefab;
-    
-    public enum Direction { Up, Down, Left, Right, Null }
+    public Vector3 Move { get; set; } = Vector3.left;
+    public List<SnakeTail> SnakeTails { get; } = new();
 
-    public Direction MoveDirection { get; set; } = Direction.Left;
-    private List<SnakeTail> snakeTails = new();
-    
     private void FixedUpdate()
     {
-        if (MoveDirection == Direction.Null) return;
-        
-        for (var i = snakeTails.Count - 1; i >= 0; i--)
+        if (Move == Vector3.zero) return;
+        for (var i = SnakeTails.Count - 1; i >= 0; i--)
         {
-            snakeTails[i].MoveSnakeTail();
+            SnakeTails[i].MoveSnakeTail(i > 0 ? SnakeTails[i - 1].transform.position : transform.position);
         }
-        
-        var move = MoveDirection switch
-        {
-            Direction.Up => Vector2.up,
-            Direction.Down => Vector2.down,
-            Direction.Left => Vector2.left,
-            Direction.Right => Vector2.right,
-            Direction.Null => Vector2.zero
-        };
-        transform.Translate(move);
+
+        transform.Translate(Move);
     }
     
-    public void Move(InputAction.CallbackContext context)
+    public void MoveInput(InputAction.CallbackContext context)
     {
         var value = context.ReadValue<Vector2>();
-        if (MoveDirection != Direction.Null)
-        {
-            if (value == Vector2.up && MoveDirection != Direction.Down) MoveDirection = Direction.Up;
-            else if (value == Vector2.down && MoveDirection != Direction.Up) MoveDirection = Direction.Down;
-            else if (value == Vector2.left && MoveDirection != Direction.Right) MoveDirection = Direction.Left;
-            else if (value == Vector2.right && MoveDirection != Direction.Left) MoveDirection = Direction.Right;
-        }
+        if (value == Vector2.up && Move != Vector3.down && Move != Vector3.zero) Move = Vector3.up;
+        else if (value == Vector2.down && Move != Vector3.up && Move != Vector3.zero) Move = Vector3.down;
+        else if (value == Vector2.left && Move != Vector3.right && Move != Vector3.zero) Move = Vector3.left;
+        else if (value == Vector2.right && Move != Vector3.left && Move != Vector3.zero) Move = Vector3.right;
     }
 
     public void AddSnakeTail()
     {
-        var obj = Instantiate(tailPrefab, transform.position, Quaternion.Euler(Vector3.zero));
-        var tail = obj.GetComponent<SnakeTail>();
-        tail.PreviousPartTransform = (snakeTails.Count > 0) ? snakeTails.Last().transform : transform;
-        snakeTails.Add(tail);
+        var obj = Instantiate(tailPrefab, transform.position, Quaternion.identity);
+        SnakeTails.Add(obj.GetComponent<SnakeTail>());
     }
 
     public IEnumerator BlinkSnake()
@@ -62,7 +42,7 @@ public class Snake : MonoBehaviour
         {
             yield return new WaitForSeconds(0.5f);
             GetComponentInChildren<SpriteRenderer>().enabled = !GetComponentInChildren<SpriteRenderer>().enabled;
-            foreach (var snakeTail in snakeTails)
+            foreach (var snakeTail in SnakeTails)
             {
                 snakeTail.GetComponentInChildren<SpriteRenderer>().enabled =
                     !snakeTail.GetComponentInChildren<SpriteRenderer>().enabled;

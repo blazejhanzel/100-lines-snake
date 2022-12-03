@@ -3,27 +3,12 @@ using UnityEngine;
 
 public class PointCounter : MonoBehaviour
 {
-    [SerializeField]
-    private TextMeshProUGUI textMeshPro;
+    [SerializeField] private TextMeshProUGUI textMeshPro;
     private int score;
 
-    public int Score
+    public void IncrementPoints()
     {
-        get => score;
-        set
-        {
-            score = value;
-            UpdateText();
-        }
-    }
-
-    private void Start()
-    {
-        UpdateText();
-    }
-    
-    private void UpdateText()
-    {
+        score++;
         textMeshPro.text = score.ToString();
     }
 }
