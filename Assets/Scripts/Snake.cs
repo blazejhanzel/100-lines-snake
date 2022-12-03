@@ -41,7 +41,11 @@ public class Snake : MonoBehaviour
         {
             yield return new WaitForSeconds(0.5f);
             GetComponentInChildren<SpriteRenderer>().enabled = !GetComponentInChildren<SpriteRenderer>().enabled;
-            SnakeTails.ForEach(snakeTail => snakeTail.gameObject.SetActive(!snakeTail.gameObject.activeSelf));
+            SnakeTails.ForEach(snakeTail =>
+            {
+                snakeTail.GetComponentInChildren<SpriteRenderer>().enabled =
+                    !snakeTail.GetComponentInChildren<SpriteRenderer>().enabled;
+            });
         }
     }
 }
