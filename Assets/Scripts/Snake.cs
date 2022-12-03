@@ -8,16 +8,16 @@ public class Snake : MonoBehaviour
     [SerializeField] private GameObject tailPrefab;
 
     public Vector3 Move { get; set; } = Vector3.left;
-    public List<SnakeTail> SnakeTails { get; } = new();
+    public List<GameObject> SnakeTails { get; } = new();
 
     private void FixedUpdate()
     {
         if (Move == Vector3.zero) return;
         for (var i = SnakeTails.Count - 1; i >= 0; i--)
         {
-            SnakeTails[i].MoveSnakeTail(i > 0 ? SnakeTails[i - 1].transform.position : transform.position);
+            SnakeTails[i].transform.position = i > 0 ? SnakeTails[i - 1].transform.position : transform.position;
         }
-
+        
         transform.Translate(Move);
     }
     
@@ -32,8 +32,7 @@ public class Snake : MonoBehaviour
 
     public void AddSnakeTail()
     {
-        var obj = Instantiate(tailPrefab, transform.position, Quaternion.identity);
-        SnakeTails.Add(obj.GetComponent<SnakeTail>());
+        SnakeTails.Add(Instantiate(tailPrefab, transform.position, Quaternion.identity));
     }
 
     public IEnumerator BlinkSnake()
@@ -42,11 +41,7 @@ public class Snake : MonoBehaviour
         {
             yield return new WaitForSeconds(0.5f);
             GetComponentInChildren<SpriteRenderer>().enabled = !GetComponentInChildren<SpriteRenderer>().enabled;
-            foreach (var snakeTail in SnakeTails)
-            {
-                snakeTail.GetComponentInChildren<SpriteRenderer>().enabled =
-                    !snakeTail.GetComponentInChildren<SpriteRenderer>().enabled;
-            }
+            SnakeTails.ForEach(snakeTail => snakeTail.gameObject.SetActive(!snakeTail.gameObject.activeSelf));
         }
     }
 }
